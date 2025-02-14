@@ -1,62 +1,124 @@
 package com.weatherapp.myweatherapp.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CityInfo {
 
   @JsonProperty("address")
-  String address;
+  private String address;
 
   @JsonProperty("description")
-  String description;
+  private String description;
 
   @JsonProperty("currentConditions")
-  CurrentConditions currentConditions;
+  private CurrentConditions currentConditions;
 
   @JsonProperty("days")
-  List<Days> days;
+  private List<Days> days;
 
-  static class CurrentConditions {
+  public CurrentConditions getCurrentConditions() {
+      return currentConditions;
+  }
+
+  public String getAddress() {
+      return address;
+  }
+
+  public String getDescription() {
+      return description;
+  }
+
+  public List<Days> getDays() {
+      return days;
+  }
+
+  public static class CurrentConditions {
     @JsonProperty("temp")
-    String currentTemperature;
+    private String currentTemperature;
 
     @JsonProperty("sunrise")
-    String sunrise;
+    private String sunrise;
 
     @JsonProperty("sunset")
-    String sunset;
+    private String sunset;
 
     @JsonProperty("feelslike")
-    String feelslike;
+    private String feelslike;
 
     @JsonProperty("humidity")
-    String humidity;
+    private String humidity;
 
     @JsonProperty("conditions")
-    String conditions;
+    private String conditions;
+
+    public String getSunrise() {
+        return sunrise;
+    }
+
+    public String getSunset() {
+        return sunset;
+    }
+
+    public String getCurrentTemperature() {
+        return currentTemperature;
+    }
+
+    public String getFeelsLike() {
+        return feelslike;
+    }
+
+    public String getHumidity() {
+        return humidity;
+    }
+
+    public String getConditions() {
+        return conditions;
+    }
   }
 
-  static class Days {
-
+  public static class Days {
     @JsonProperty("datetime")
-    String date;
+    private String date;
 
     @JsonProperty("temp")
-    String currentTemperature;
+    private String currentTemperature;
 
     @JsonProperty("tempmax")
-    String maxTemperature;
+    private String maxTemperature;
 
     @JsonProperty("tempmin")
-    String minTemperature;
+    private String minTemperature;
 
     @JsonProperty("conditions")
-    String conditions;
+    private String conditions;
 
     @JsonProperty("description")
-    String description;
+    private String description;
 
+    public String getDate() {
+        return date;
+    }
+
+    public String getCurrentTemperature() {
+        return currentTemperature;
+    }
+
+    public String getMaxTemperature() {
+        return maxTemperature;
+    }
+
+    public String getMinTemperature() {
+        return minTemperature;
+    }
+
+    public String getConditions() {
+        return conditions;
+    }
+
+    public String getDescription() {
+        return description;
+    }
   }
-
 }
