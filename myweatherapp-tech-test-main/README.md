@@ -38,3 +38,39 @@ You will need to implement these features by adding new endpoints to the `Weathe
 * Once you're ready to submit, raise a Pull Request to merge your changes with your main branch and share the repo with us.
 
 Good luck!
+
+## Solution
+
+# MyWeatherApp - Weather Forecasting API
+
+## Features
+- **Compare Daylight Hours**: Determines which city has longer daylight.
+- **Check if it is Raining**: Identifies if it is currently raining in a city.
+- **Uses VisualCrossing API**: Fetches real-time weather data.
+
+## Endpoints
+### **Get Weather Forecast for a City**
+```bash
+GET /weather/forecast/{city}
+Example Usage:
+curl http://localhost:8080/weather/forecast/London
+
+
+Compare Daylight Hours Between Two Cities
+GET /weather/compare-daylight/{city1}/{city2}
+
+Example Usage:
+curl http://localhost:8080/weather/compare-daylight/London/NewYork
+
+Response
+City with the longest daylight: New York
+
+Check Which City is Raining
+bash
+GET /weather/check-rain/{city1}/{city2}
+Example Usage
+curl http://localhost:8080/weather/check-rain/London/NewYork
+Response
+"It is currently raining in London"
+"It is currently raining in both London and New York"
+"It is not raining in either city"
